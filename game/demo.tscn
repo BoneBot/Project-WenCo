@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://2hhqloqihtee"]
+
+[ext_resource type="Script" path="res://game/demo.gd" id="1_d2wdo"]
+[ext_resource type="PackedScene" uid="uid://drtr67my1jm0s" path="res://game/map/demo_map.tscn" id="1_nr61g"]
+[ext_resource type="PackedScene" uid="uid://cx4n5g4jwajpq" path="res://game/player/player.tscn" id="2_y2yl6"]
+
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_d2wdo")
+
+[node name="Player" parent="." instance=ExtResource("2_y2yl6")]
+position = Vector2(130, 131)
+
+[node name="DemoMap" parent="." instance=ExtResource("1_nr61g")]

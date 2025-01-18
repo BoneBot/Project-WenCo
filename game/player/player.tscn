@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx4n5g4jwajpq"]
+
+[ext_resource type="Texture2D" uid="uid://5tk771jfex8n" path="res://icon.svg" id="1_4kpp5"]
+[ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrvkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4kpp5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ed6pa"]
+radius = 32.0
+height = 144.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_36ijq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.75509e-06, -3.8147e-06)
+scale = Vector2(0.5, 1.125)
+sprite_frames = SubResource("SpriteFrames_xrvkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ed6pa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -72)
+position_smoothing_enabled = true

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=4 uid="uid://drtr67my1jm0s"]
+
+[ext_resource type="Texture2D" uid="uid://5tk771jfex8n" path="res://icon.svg" id="1_4o54v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldixi"]
+texture = ExtResource("1_4o54v")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(42, 42)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+
+[sub_resource type="TileSet" id="TileSet_iii52"]
+tile_size = Vector2i(42, 42)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ldixi")
+
+[node name="DemoMap" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAABAAgAAAABAAIAAAACAAgAAAABAAIAAAADAAgAAAABAAIAAAAEAAgAAAABAAIAAAAFAAgAAAABAAIAAAAGAAgAAAABAAIAAAAHAAgAAAABAAIAAAAIAAgAAAABAAIAAAAJAAgAAAABAAIAAAAKAAgAAAABAAIAAAALAAgAAAABAAIAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAANAAgAAAACAAIAAAAMAAYAAAAAAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAIAAAANAAcAAAACAAEAAAANAAYAAAACAAEAAAANAAUAAAACAAEAAAANAAQAAAACAAEAAAANAAMAAAACAAEAAAAAAAgAAAABAAIAAAD//wgAAAABAAIAAAD+/wgAAAABAAIAAAD9/wgAAAAAAAIAAAD+/wYAAAACAAEAAAD+/wUAAAACAAEAAAD+/wQAAAACAAEAAAD+/wMAAAACAAEAAAD+/wIAAAACAAEAAAD+/wEAAAACAAEAAAD+/wAAAAACAAEAAAD//wcAAAABAAAAAAAAAAcAAAABAAAAAAD+/wcAAAABAAEAAAD9/wcAAAAAAAEAAAD9/wYAAAAAAAEAAAD9/wUAAAAAAAEAAAD9/wQAAAAAAAEAAAD9/wMAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wAAAAAAAAEAAAAMAAUAAAAAAAEAAAAMAAQAAAAAAAEAAAAMAAMAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAEAAAAAAAEAAAAMAAAAAAAAAAEAAAANAAAAAAACAAEAAAANAAEAAAACAAEAAAANAAIAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_iii52")
+
+[node name="Spawnpoint" type="Marker2D" parent="."]
+position = Vector2(131, 136)
