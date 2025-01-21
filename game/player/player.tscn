@@ -25,7 +25,6 @@ script = ExtResource("1_36ijq")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrvkc")
 offset = Vector2(13, 0)
-flip_h = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ed6pa")
