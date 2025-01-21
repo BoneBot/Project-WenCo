@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cx4n5g4jwajpq"]
 
-[ext_resource type="Texture2D" uid="uid://5tk771jfex8n" path="res://icon.svg" id="1_4kpp5"]
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
+[ext_resource type="Texture2D" uid="uid://dhotyahann3um" path="res://Art Stuff/The_Sword.png" id="2_bvnbb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrvkc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4kpp5")
+"texture": ExtResource("2_bvnbb")
 }],
 "loop": true,
 "name": &"default",
@@ -15,19 +15,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ed6pa"]
-radius = 32.0
+radius = 16.0
 height = 64.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_36ijq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xrvkc")
+offset = Vector2(13, 0)
+flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ed6pa")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -72)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
