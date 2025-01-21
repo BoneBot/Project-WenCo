@@ -33,3 +33,8 @@ shape = SubResource("CapsuleShape2D_ed6pa")
 position = Vector2(0, -72)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
