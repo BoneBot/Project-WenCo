@@ -28,6 +28,11 @@ func _process(delta: float) -> void:
 		# Look left
 		$Sprite.flip_h = true
 		$Sprite.offset.x = -absf($Sprite.offset.x)
+	
+	# Update animation
+	var animation := get_new_animation()
+	if animation != $Sprite.animation:
+		$Sprite.play(animation)
 
 
 func _physics_process(delta: float) -> void:
@@ -63,6 +68,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _on_dash_cooldown_timeout() -> void:
+	print("Dash ready!")
+	_dash_ready = true
+
+
 # Gets the current direction the player is looking
 # 1 = Looking right 
 # 0 = Neutral/no direction
@@ -74,6 +84,14 @@ func get_look_direction() -> int:
 		return -1
 
 
-func _on_dash_cooldown_timeout() -> void:
-	print("Dash ready!")
-	_dash_ready = true
+# Gets the current animation to play based on the player state
+func get_new_animation() -> String:
+	var animation_new: String
+	if is_on_floor():
+		if absf(velocity.x) > 0.1:
+			animation_new = "run"
+		else:
+			animation_new = "idle"
+	else:
+		animation_new = "jump"
+	return animation_new
