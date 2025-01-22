@@ -16,23 +16,22 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Update look direction
-	var look_threshold = 1
 	if Input.is_action_pressed("right") and Input.is_action_pressed("left"):
 		# Don't do anything when both directions are pressed at once
 		pass
 	elif Input.is_action_pressed("right") and get_look_direction() != 1:
 		# Look right
 		$Sprite.flip_h = false
-		$Sprite.offset.x = absf($Sprite.offset.x)
+		$Sprite.offset.x = -absf($Sprite.offset.x)
 	elif Input.is_action_pressed("left") and get_look_direction() != -1:
 		# Look left
 		$Sprite.flip_h = true
-		$Sprite.offset.x = -absf($Sprite.offset.x)
+		$Sprite.offset.x = absf($Sprite.offset.x)
 	
 	# Update animation
 	var animation := get_new_animation()
-	if animation != $Sprite.animation:
-		$Sprite.play(animation)
+	if animation != $AnimationPlayer.current_animation:
+		$AnimationPlayer.play(animation)
 
 
 func _physics_process(delta: float) -> void:
@@ -69,7 +68,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_dash_cooldown_timeout() -> void:
-	print("Dash ready!")
 	_dash_ready = true
 
 
