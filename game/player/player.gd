@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		$Sprite.offset.x = absf($Sprite.offset.x)
 	
 	# Update animation
-	var animation := get_new_animation()
+	var animation := get_new_animation(Input.is_action_just_pressed("attack"))
 	if animation != $AnimationPlayer.current_animation:
 		$AnimationPlayer.play(animation)
 
@@ -83,10 +83,12 @@ func get_look_direction() -> int:
 
 
 # Gets the current animation to play based on the player state
-func get_new_animation() -> String:
+func get_new_animation(isAttacking: bool) -> String:
 	var animation_new: String
 	if is_on_floor():
-		if absf(velocity.x) > 0.1:
+		if isAttacking or ($AnimationPlayer.current_animation == "attack"):
+			animation_new = "attack"
+		elif absf(velocity.x) > 0.1:
 			animation_new = "run"
 		else:
 			animation_new = "idle"

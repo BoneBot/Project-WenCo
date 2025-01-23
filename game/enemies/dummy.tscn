@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2d8wbvrjas3h"]
+
+[ext_resource type="Script" path="res://game/enemies/dummy.gd" id="1_t64i4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i2jhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lop8"]
+size = Vector2(40, 40)
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_t64i4")
+
+[node name="Sprite" type="TextureRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+pivot_offset = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_i2jhb")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_5lop8")
+
+[node name="HitRecover" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="HitRecover" to="." method="_on_hit_recover_timeout"]
