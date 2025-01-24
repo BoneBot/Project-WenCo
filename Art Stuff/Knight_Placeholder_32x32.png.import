@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bslacuftc1io1"
-path="res://.godot/imported/sword_run_right.png-e29fe366d7772a907704d2c6294fcd40.ctex"
+uid="uid://be2882xwktgg8"
+path="res://.godot/imported/Knight_Placeholder_32x32.png-3163f3d37fc6e07e6c45f0c8dcd02db4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/sword_run_right.png"
-dest_files=["res://.godot/imported/sword_run_right.png-e29fe366d7772a907704d2c6294fcd40.ctex"]
+source_file="res://Art Stuff/Knight_Placeholder_32x32.png"
+dest_files=["res://.godot/imported/Knight_Placeholder_32x32.png-3163f3d37fc6e07e6c45f0c8dcd02db4.ctex"]
 
 [params]
 
