@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2hhqloqihtee"]
+[gd_scene load_steps=6 format=3 uid="uid://2hhqloqihtee"]
 
 [ext_resource type="Script" path="res://game/demo.gd" id="1_d2wdo"]
 [ext_resource type="PackedScene" uid="uid://drtr67my1jm0s" path="res://game/map/demo_map.tscn" id="1_nr61g"]
 [ext_resource type="PackedScene" uid="uid://cx4n5g4jwajpq" path="res://game/player/player.tscn" id="2_y2yl6"]
 [ext_resource type="PackedScene" uid="uid://c2d8wbvrjas3h" path="res://game/enemies/dummy.tscn" id="3_e5kxr"]
+[ext_resource type="PackedScene" uid="uid://35yuhq6un17j" path="res://game/player/sword.tscn" id="5_c08gb"]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource("1_d2wdo")
@@ -15,3 +16,6 @@ position = Vector2(130, 131)
 position = Vector2(405, 256)
 
 [node name="DemoMap" parent="." instance=ExtResource("1_nr61g")]
+
+[node name="Sword" parent="." instance=ExtResource("5_c08gb")]
+position = Vector2(204, -74)
