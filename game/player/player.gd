@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animation_player := $AnimationPlayer
 @onready var dash_cooldown := $DashCooldown
 @onready var projectile_spawn := $ProjectileSpawn
+@onready var camera := $Camera
 
 # CONSTANTS
 const SPEED := 300.0				# Max walking speed
@@ -82,8 +83,10 @@ func _physics_process(delta: float) -> void:
 			velocity.x = DASH_VELOCITY * get_look_direction()
 
 	# Handle blink
-	if Input.is_action_just_pressed("blink"):
+	if Input.is_action_just_pressed("blink") and not is_instance_valid(sword_instance):
+		camera.enabled = false
 		sword_instance = sword_scene.instantiate()
+		sword_instance.blink_triggered.connect(_on_blink_triggered)
 		sword_instance.position = projectile_spawn.position
 		add_child(sword_instance)
 		sword_instance.apply_central_impulse(Vector2(400, -400))
@@ -93,6 +96,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_dash_cooldown_timeout() -> void:
 	dash_ready = true
+
+
+func _on_blink_triggered() -> void:
+	print("Blink!")
+	camera.enabled = true
 
 
 # Gets the current direction the player is looking

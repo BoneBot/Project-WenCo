@@ -1,9 +1,12 @@
 extends RigidBody2D
 
 
+signal blink_triggered
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Camera.enabled = true
 
 
 func _physics_process(delta: float) -> void:
@@ -13,5 +16,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	# Destroy sword when it comes into contact with a body
+	blink_to_sword()
+
+func blink_to_sword() -> void:
+	blink_triggered.emit()
+	$Camera.enabled = false
 	queue_free()

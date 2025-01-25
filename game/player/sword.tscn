@@ -25,4 +25,15 @@ position = Vector2(-3.82137e-15, 8.74228e-08)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0xq2p")
 
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-28, -72)
+enabled = false
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.5
+drag_top_margin = 0.5
+drag_right_margin = 0.5
+drag_bottom_margin = 0.5
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
