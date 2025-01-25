@@ -10,7 +10,5 @@ func _ready() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Hit something...")
 	if area.has_method("take_damage"):
-		print("Something can take damage!")
 		area.take_damage(damage)
