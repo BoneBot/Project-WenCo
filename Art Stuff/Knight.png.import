@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0s2h3crhjmd1"
-path="res://.godot/imported/Human Enemy 1-export.png-7d802ae3648771ff8385e95c908f1b16.ctex"
+path="res://.godot/imported/Knight.png-c002fe934df438ac89fc337736c3d146.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Human Enemy 1-export.png"
-dest_files=["res://.godot/imported/Human Enemy 1-export.png-7d802ae3648771ff8385e95c908f1b16.ctex"]
+source_file="res://Art Stuff/Knight.png"
+dest_files=["res://.godot/imported/Knight.png-c002fe934df438ac89fc337736c3d146.ctex"]
 
 [params]
 

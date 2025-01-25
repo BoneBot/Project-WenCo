@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2d8wbvrjas3h"]
+[gd_scene load_steps=5 format=3 uid="uid://c2d8wbvrjas3h"]
 
 [ext_resource type="Script" path="res://game/enemies/dummy.gd" id="1_t64i4"]
+[ext_resource type="Script" path="res://game/common/hurt_box.gd" id="2_qo2y2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i2jhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lop8"]
 size = Vector2(40, 40)
 
-[node name="Enemy" type="Node2D"]
+[node name="Dummy" type="Node2D"]
 script = ExtResource("1_t64i4")
 
 [node name="Sprite" type="TextureRect" parent="."]
@@ -21,6 +22,7 @@ texture = SubResource("PlaceholderTexture2D_i2jhb")
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 5
+script = ExtResource("2_qo2y2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_5lop8")
@@ -28,5 +30,5 @@ shape = SubResource("RectangleShape2D_5lop8")
 [node name="HitRecover" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="damage_taken" from="HurtBox" to="." method="_on_hurt_box_damage_taken"]
 [connection signal="timeout" from="HitRecover" to="." method="_on_hit_recover_timeout"]

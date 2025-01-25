@@ -5,12 +5,8 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if area == null:
-		return
-
-	print("Took damage!")
+func _on_hurt_box_damage_taken(damage: Variant) -> void:
+	print("Took %d damage!" % damage)
 	$HitRecover.start()
 	$Sprite.visible = false
 	$HurtBox.set_deferred("monitoring", false)
