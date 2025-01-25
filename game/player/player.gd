@@ -154,8 +154,12 @@ func look_at_direction(direction: LookDirectionType) -> void:
 func get_new_animation(isAttacking: bool) -> String:
 	var animation_new: String
 	if is_on_floor():
-		if isAttacking or (animation_player.current_animation == "attack"):
-			animation_new = "attack"
+		if isAttacking or ("attack" in animation_player.current_animation):
+			animation_new = "attack_"
+			if get_look_direction() == LookDirectionType.RIGHT:
+				animation_new += "right"
+			else:
+				animation_new += "left"
 		elif absf(velocity.x) > 0.1:
 			animation_new = "run"
 		else:
