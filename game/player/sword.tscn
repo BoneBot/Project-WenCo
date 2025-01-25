@@ -14,13 +14,15 @@ max_contacts_reported = 3
 script = ExtResource("1_41mhr")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-21.7452, 4.25483)
 rotation = -2.35619
 texture = ExtResource("1_684le")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-3.82137e-15, 8.74228e-08)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0xq2p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

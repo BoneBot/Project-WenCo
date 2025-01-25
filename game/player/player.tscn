@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx4n5g4jwajpq"]
+[gd_scene load_steps=13 format=3 uid="uid://cx4n5g4jwajpq"]
 
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
 [ext_resource type="Texture2D" uid="uid://cimw06datwdeb" path="res://Art Stuff/Run_Cycle_Sketch.png" id="2_8cwcj"]
+[ext_resource type="PackedScene" uid="uid://35yuhq6un17j" path="res://game/player/sword.tscn" id="2_je26h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ed6pa"]
 radius = 16.0
@@ -286,6 +287,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_36ijq")
+sword_scene = ExtResource("2_je26h")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -314,13 +316,16 @@ offset_right = 6.0
 offset_bottom = 23.0
 texture = SubResource("PlaceholderTexture2D_sbwjr")
 
+[node name="ProjectileSpawn" type="Marker2D" parent="."]
+position = Vector2(28, 0)
+
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(0, -72)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="DashCooldown" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.5
 one_shot = true
 
