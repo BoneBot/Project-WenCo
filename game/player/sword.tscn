@@ -35,5 +35,3 @@ drag_left_margin = 0.5
 drag_top_margin = 0.5
 drag_right_margin = 0.5
 drag_bottom_margin = 0.5
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

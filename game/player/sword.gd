@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-signal blink_triggered
+signal blink_triggered(collision_normal)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,10 +15,13 @@ func _physics_process(delta: float) -> void:
 		look_at(linear_velocity + position)
 
 
-func _on_body_entered(body: Node) -> void:
-	blink_to_sword()
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if get_contact_count() > 0:
+		var collision_normal = state.get_contact_local_normal(0)
+		blink_to_sword(collision_normal)
 
-func blink_to_sword() -> void:
-	blink_triggered.emit()
+
+func blink_to_sword(collision_normal=null) -> void:
+	blink_triggered.emit(collision_normal)
 	$Camera.enabled = false
 	queue_free()

@@ -324,9 +324,15 @@ position = Vector2(0, -72)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="DashCooldown" type="Timer" parent="."]
+[node name="CooldownTimers" type="Node" parent="."]
+
+[node name="DashCooldown" type="Timer" parent="CooldownTimers"]
 process_callback = 0
 wait_time = 0.5
+one_shot = true
+
+[node name="BlinkCooldown" type="Timer" parent="CooldownTimers"]
+process_callback = 0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -334,4 +340,5 @@ libraries = {
 "": SubResource("AnimationLibrary_ecmp2")
 }
 
-[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="CooldownTimers/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="CooldownTimers/BlinkCooldown" to="." method="_on_blink_cooldown_timeout"]
