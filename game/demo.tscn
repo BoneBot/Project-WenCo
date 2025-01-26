@@ -18,4 +18,4 @@ position = Vector2(5, 245)
 [node name="DemoMap" parent="." instance=ExtResource("1_nr61g")]
 
 [node name="Knight" parent="." instance=ExtResource("5_mom33")]
-position = Vector2(424, 244)
+position = Vector2(406, 261)

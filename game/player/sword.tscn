@@ -9,6 +9,7 @@ height = 38.0
 
 [node name="Sword" type="RigidBody2D"]
 collision_mask = 6
+mass = 0.5
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_41mhr")

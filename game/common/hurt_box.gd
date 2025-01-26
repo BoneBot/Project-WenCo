@@ -6,4 +6,5 @@ signal damage_taken(damage)
 
 
 func take_damage(damage: int) -> void:
-	damage_taken.emit(damage)
+	if monitoring:
+		damage_taken.emit(damage)

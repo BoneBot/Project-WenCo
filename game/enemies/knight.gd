@@ -3,6 +3,7 @@ extends RigidBody2D
 
 @onready var sprite := $Sprite
 @onready var vision := $Vision
+@onready var vision_collision := $Vision/CollisionShape2D
 @onready var attack_timer := $AttackTimer
 @onready var animation_player := $AnimationPlayer
 
@@ -20,26 +21,32 @@ func turn_around() -> void:
 		# Turn to face left
 		sprite.flip_h = true
 		sprite.position.x = -abs(sprite.position.x)
-		vision.position.x = -abs(vision.position.x)
+		vision_collision.position.x = -abs(vision_collision.position.x)
 		facing_right = false
 	else:
 		# Turn to face right
 		sprite.flip_h = false
 		sprite.position.x = abs(sprite.position.x)
-		vision.position.x = abs(vision.position.x)
+		vision_collision.position.x = abs(vision_collision.position.x)
 		facing_right = true
 
 
+func attack() -> void:
+	if facing_right:
+		animation_player.call_deferred("play", "attack_right")
+	else:
+		animation_player.call_deferred("play", "attack_left")
+
+
 func _on_vision_body_entered(body: Node2D) -> void:
+	# Attack once and continue attacking until the player leaves the vision area
+	attack()
 	attack_timer.start()
 
 
 func _on_attack_timer_timeout() -> void:
 	# Attack
-	if facing_right:
-		animation_player.play("attack_right")
-	else:
-		animation_player.play("attack_left")
+	attack()
 
 	# Stop attacking if player is no longer in vision range
 	if not vision.has_overlapping_bodies():
