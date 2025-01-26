@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0s2h3crhjmd1" path="res://Art Stuff/Knight.png" id="1_4ks13"]
 [ext_resource type="Script" path="res://game/enemies/knight.gd" id="1_078ny"]
 [ext_resource type="Script" path="res://game/common/hurt_box.gd" id="3_gd1ws"]
+[ext_resource type="Script" path="res://game/common/hit_box.gd" id="4_c26qd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n562r"]
 radius = 20.0
@@ -12,8 +13,6 @@ height = 60.0
 size = Vector2(24, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1fjp"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uedob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8lxv"]
 size = Vector2(65.75, 80)
@@ -68,18 +67,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(20, 20)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("HitBox/CollisionShape2D/TextureRect:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_nbgiv"]
 resource_name = "attack_left"
@@ -132,18 +119,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(12.6361, 46.1726)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("HitBox/CollisionShape2D/TextureRect:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.166666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_o2jw5"]
@@ -198,18 +173,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(12.6361, 46.1726)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("HitBox/CollisionShape2D/TextureRect:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.166666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_0gq4j"]
 resource_name = "idle"
@@ -263,18 +226,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(20, 20)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("HitBox/CollisionShape2D/TextureRect:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2p332"]
 _data = {
@@ -290,7 +241,6 @@ collision_mask = 5
 mass = 50.0
 lock_rotation = true
 script = ExtResource("1_078ny")
-facing_right = false
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -298,6 +248,7 @@ position = Vector2(6, -2)
 texture = ExtResource("1_4ks13")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_n562r")
 
 [node name="HurtBox" type="Area2D" parent="."]
@@ -306,24 +257,19 @@ script = ExtResource("3_gd1ws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_5s0a8")
+debug_color = Color(0, 0.65098, 0, 0.419608)
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
+script = ExtResource("4_c26qd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_e1fjp")
 disabled = true
-
-[node name="TextureRect" type="TextureRect" parent="HitBox/CollisionShape2D"]
-visible = false
-modulate = Color(0, 0, 1, 0.396078)
-offset_left = -6.0
-offset_top = -22.0
-offset_right = 6.0
-offset_bottom = 23.0
-texture = SubResource("PlaceholderTexture2D_uedob")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Vision" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 monitorable = false
 

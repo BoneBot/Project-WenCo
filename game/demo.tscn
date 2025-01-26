@@ -19,3 +19,8 @@ position = Vector2(5, 245)
 
 [node name="Knight" parent="." instance=ExtResource("5_mom33")]
 position = Vector2(406, 261)
+facing_right = false
+
+[node name="Knight2" parent="." instance=ExtResource("5_mom33")]
+position = Vector2(456, 92)
+facing_right = false

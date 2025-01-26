@@ -7,7 +7,10 @@ extends RigidBody2D
 @onready var attack_timer := $AttackTimer
 @onready var animation_player := $AnimationPlayer
 
+## Whether or not to spawn the knight facing right.
 @export var facing_right := true
+## Knight health.
+@export var health := 20
 
 
 func _ready() -> void:
@@ -55,3 +58,7 @@ func _on_attack_timer_timeout() -> void:
 
 func _on_hurt_box_damage_taken(damage: Variant) -> void:
 	print("Knight took %d damage" % damage)
+	health -= damage
+	if health <= 0:
+		print("Knight killed!")
+		queue_free()

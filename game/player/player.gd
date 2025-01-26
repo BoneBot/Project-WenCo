@@ -21,6 +21,10 @@ const BLINK_IMPULSE_MAGNITUE := 600		# Impulse applied when throwing weapon for 
 # EXPORT VARIABLES
 ## The scene to use when spawning a sword for blink.
 @export var sword_scene: PackedScene
+## The maximum health the player can have.
+@export var max_health := 50
+## Current player health.
+@export var health := 50
 
 # MEMBER VARIABLES
 var sword_instance: RigidBody2D
@@ -36,10 +40,12 @@ enum LookDirectionType {
 }
 
 
+## Process anything upon creation
 func _ready() -> void:
 	pass
 
 
+## Process player graphics
 func _process(delta: float) -> void:
 	# Update look direction
 	if Input.is_action_pressed("right") and Input.is_action_pressed("left"):
@@ -58,6 +64,7 @@ func _process(delta: float) -> void:
 		animation_player.play(animation)
 
 
+## Process player physics
 func _physics_process(delta: float) -> void:
 	# Do not process any player physics if they are vanished
 	if is_vanished:
@@ -84,6 +91,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+## Handles typical player inputs
 func handle_normal_inputs(delta: float) -> void:
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -111,12 +119,14 @@ func handle_normal_inputs(delta: float) -> void:
 			velocity.x = DASH_VELOCITY * get_look_direction()
 
 
+## Handles inputs when the blink button is held down
 func handle_blink_hold_inputs() -> void:
 	# Kill all velocity
 	if velocity.length() > 0:
 		velocity = Vector2.ZERO
 
 
+## Initiates a blink
 func trigger_blink() -> void:
 	create_sword_instance()
 	vanish_player()
@@ -125,13 +135,7 @@ func trigger_blink() -> void:
 	sword_instance.apply_central_impulse(direction * BLINK_IMPULSE_MAGNITUE)
 
 
-func _on_blink_triggered(blink_position) -> void:
-	position = blink_position
-	unvanish_player()
-	blink_cooldown.start()
-
-
-# Gets the current direction the player is looking
+## Gets the current direction the player is looking
 func get_look_direction() -> LookDirectionType:
 	if not sprite.flip_h:
 		return LookDirectionType.RIGHT
@@ -139,6 +143,7 @@ func get_look_direction() -> LookDirectionType:
 		return LookDirectionType.LEFT
 
 
+## Makes the player look in the specified direction
 func look_at_direction(direction: LookDirectionType) -> void:
 	if direction == LookDirectionType.RIGHT:
 		# Look right
@@ -152,7 +157,7 @@ func look_at_direction(direction: LookDirectionType) -> void:
 		projectile_spawn.position.x = -absf(projectile_spawn.position.x)
 
 
-# Gets the current animation to play based on the player state
+## Gets the current animation to play based on the player state
 func get_new_animation(isAttacking: bool) -> String:
 	var animation_new: String
 	if is_on_floor():
@@ -173,17 +178,21 @@ func get_new_animation(isAttacking: bool) -> String:
 	return animation_new
 
 
+## Creates a new instance of a sword used to blink
 func create_sword_instance() -> void:
 	sword_instance = sword_scene.instantiate()
 	sword_instance.initialize(projectile_spawn.position, _on_blink_triggered)
 
 
+## Vanishes the player to begin a blink
 func vanish_player() -> void:
 	camera.enabled = false
 	sprite.visible = false
 	collision.set_deferred("disabled", true)
 	is_vanished = true
 
+
+## Unvanishes the player to terminate a blink
 func unvanish_player() -> void:
 	camera.enabled = true
 	sprite.visible = true
@@ -191,10 +200,31 @@ func unvanish_player() -> void:
 	is_vanished = false
 
 
+## Kills the player
+func die() -> void:
+	sprite.visible = false
+	collision.set_deferred("disabled", true)
+	is_vanished = true
+
+
 func _on_dash_cooldown_timeout() -> void:
 	dash_ready = true
+
+
+func _on_blink_triggered(blink_position) -> void:
+	position = blink_position
+	unvanish_player()
+	blink_cooldown.start()
 
 
 func _on_blink_cooldown_timeout() -> void:
 	blink_ready = true
 	print("Blink ready!")
+
+
+func _on_hurt_box_damage_taken(damage: Variant) -> void:
+	print("Player took %d damage!" % damage)
+	health = health - damage
+	if health <= 0:
+		print("Player died!")
+		die()
