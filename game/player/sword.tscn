@@ -27,7 +27,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0xq2p")
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(-28, -72)
+position = Vector2(0, -72)
 enabled = false
 position_smoothing_enabled = true
 drag_horizontal_enabled = true

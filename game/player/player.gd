@@ -19,6 +19,7 @@ const DASH_VELOCITY := 1000.0			# Initial dash speed
 const BLINK_IMPULSE_MAGNITUE := 600		# Impulse applied when throwing weapon for blink
 
 # EXPORT VARIABLES
+## The scene to use when spawning a sword for blink.
 @export var sword_scene: PackedScene
 
 # MEMBER VARIABLES
@@ -124,9 +125,8 @@ func trigger_blink() -> void:
 	sword_instance.apply_central_impulse(direction * BLINK_IMPULSE_MAGNITUE)
 
 
-func _on_blink_triggered(collision_normal) -> void:
-	var offset_dist = 40
-	position = sword_instance.global_position + collision_normal * offset_dist
+func _on_blink_triggered(blink_position) -> void:
+	position = blink_position
 	unvanish_player()
 	blink_cooldown.start()
 
@@ -144,10 +144,12 @@ func look_at_direction(direction: LookDirectionType) -> void:
 		# Look right
 		sprite.flip_h = false
 		sprite.offset.x = -absf(sprite.offset.x)
+		projectile_spawn.position.x = absf(projectile_spawn.position.x)
 	elif direction == LookDirectionType.LEFT:
 		# Look left
 		sprite.flip_h = true
 		sprite.offset.x = absf(sprite.offset.x)
+		projectile_spawn.position.x = -absf(projectile_spawn.position.x)
 
 
 # Gets the current animation to play based on the player state
@@ -173,8 +175,7 @@ func get_new_animation(isAttacking: bool) -> String:
 
 func create_sword_instance() -> void:
 	sword_instance = sword_scene.instantiate()
-	sword_instance.blink_triggered.connect(_on_blink_triggered)
-	sword_instance.position = projectile_spawn.position
+	sword_instance.initialize(projectile_spawn.position, _on_blink_triggered)
 
 
 func vanish_player() -> void:
