@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhotyahann3um"
-path="res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"
+uid="uid://5cfw7cdoey0f"
+path="res://.godot/imported/Knight_Placeholder_64x64.png-da804e35dbfa1851dbfdd0a9403f34e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/the_sword.png"
-dest_files=["res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"]
+source_file="res://Art Stuff/Knight_Placeholder_64x64.png"
+dest_files=["res://.godot/imported/Knight_Placeholder_64x64.png-da804e35dbfa1851dbfdd0a9403f34e5.ctex"]
 
 [params]
 

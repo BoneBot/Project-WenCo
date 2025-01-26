@@ -16,18 +16,22 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Update look direction
-	var look_threshold = 1
 	if Input.is_action_pressed("right") and Input.is_action_pressed("left"):
 		# Don't do anything when both directions are pressed at once
 		pass
 	elif Input.is_action_pressed("right") and get_look_direction() != 1:
 		# Look right
 		$Sprite.flip_h = false
-		$Sprite.offset.x = absf($Sprite.offset.x)
+		$Sprite.offset.x = -absf($Sprite.offset.x)
 	elif Input.is_action_pressed("left") and get_look_direction() != -1:
 		# Look left
 		$Sprite.flip_h = true
-		$Sprite.offset.x = -absf($Sprite.offset.x)
+		$Sprite.offset.x = absf($Sprite.offset.x)
+	
+	# Update animation
+	var animation := get_new_animation(Input.is_action_just_pressed("attack"))
+	if animation != $AnimationPlayer.current_animation:
+		$AnimationPlayer.play(animation)
 
 
 func _physics_process(delta: float) -> void:
@@ -63,6 +67,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _on_dash_cooldown_timeout() -> void:
+	_dash_ready = true
+
+
 # Gets the current direction the player is looking
 # 1 = Looking right 
 # 0 = Neutral/no direction
@@ -74,6 +82,16 @@ func get_look_direction() -> int:
 		return -1
 
 
-func _on_dash_cooldown_timeout() -> void:
-	print("Dash ready!")
-	_dash_ready = true
+# Gets the current animation to play based on the player state
+func get_new_animation(isAttacking: bool) -> String:
+	var animation_new: String
+	if is_on_floor():
+		if isAttacking or ($AnimationPlayer.current_animation == "attack"):
+			animation_new = "attack"
+		elif absf(velocity.x) > 0.1:
+			animation_new = "run"
+		else:
+			animation_new = "idle"
+	else:
+		animation_new = "jump"
+	return animation_new

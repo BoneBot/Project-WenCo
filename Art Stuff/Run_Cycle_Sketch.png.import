@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhotyahann3um"
-path="res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"
+uid="uid://cimw06datwdeb"
+path="res://.godot/imported/Run_Cycle_Sketch.png-eb485d63642582981d4aaefee16bcfcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/the_sword.png"
-dest_files=["res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"]
+source_file="res://Art Stuff/Run_Cycle_Sketch.png"
+dest_files=["res://.godot/imported/Run_Cycle_Sketch.png-eb485d63642582981d4aaefee16bcfcb.ctex"]
 
 [params]
 

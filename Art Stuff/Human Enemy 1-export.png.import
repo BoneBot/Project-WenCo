@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhotyahann3um"
-path="res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"
+uid="uid://b0s2h3crhjmd1"
+path="res://.godot/imported/Human Enemy 1-export.png-7d802ae3648771ff8385e95c908f1b16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/the_sword.png"
-dest_files=["res://.godot/imported/the_sword.png-8ea749a1043f7e9791f4585ab0e20fc7.ctex"]
+source_file="res://Art Stuff/Human Enemy 1-export.png"
+dest_files=["res://.godot/imported/Human Enemy 1-export.png-7d802ae3648771ff8385e95c908f1b16.ctex"]
 
 [params]
 
