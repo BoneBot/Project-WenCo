@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://drtr67my1jm0s" path="res://game/map/demo_map.tscn" id="1_nr61g"]
 [ext_resource type="PackedScene" uid="uid://cx4n5g4jwajpq" path="res://game/player/player.tscn" id="2_y2yl6"]
 [ext_resource type="PackedScene" uid="uid://c2d8wbvrjas3h" path="res://game/enemies/dummy.tscn" id="3_e5kxr"]
-[ext_resource type="PackedScene" uid="uid://vfaml1iahmkk" path="res://game/enemies/knight.tscn" id="5_mom33"]
+[ext_resource type="PackedScene" uid="uid://vqevfmcy32me" path="res://game/enemies/knight.tscn" id="5_mom33"]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource("1_d2wdo")

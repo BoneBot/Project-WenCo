@@ -6,7 +6,7 @@ extends RigidBody2D
 signal blink_triggered(blink_position)
 
 # The distance away from the point of impact to set the blink teleport position
-@export var blink_displacement = 40
+@export var blink_displacement = 20
 
 
 # Initializes the contents of the sword
@@ -39,7 +39,7 @@ func blink_to_sword(collision_normal=null) -> void:
 	# Calculate the blink position
 	var blink_position = null
 	if collision_normal != null:
-		var teleport_direction = (collision_normal - linear_velocity.normalized()).normalized()
+		var teleport_direction = (2 * collision_normal - linear_velocity.normalized()).normalized()
 		blink_position = global_position + teleport_direction * blink_displacement
 
 	# Release camera control

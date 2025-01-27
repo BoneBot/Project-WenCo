@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
 [ext_resource type="Texture2D" uid="uid://cimw06datwdeb" path="res://Art Stuff/Run_Cycle_Sketch.png" id="2_8cwcj"]
-[ext_resource type="PackedScene" uid="uid://35yuhq6un17j" path="res://game/player/sword.tscn" id="2_je26h"]
+[ext_resource type="PackedScene" uid="uid://bfs5s0pwr57xg" path="res://game/player/sword.tscn" id="2_je26h"]
 [ext_resource type="Script" path="res://game/common/hurt_box.gd" id="4_4a1fa"]
 [ext_resource type="Script" path="res://game/common/hit_box.gd" id="4_j7nxm"]
 
@@ -362,7 +362,7 @@ position_smoothing_speed = 10.0
 
 [node name="DashCooldown" type="Timer" parent="CooldownTimers"]
 process_callback = 0
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [node name="BlinkCooldown" type="Timer" parent="CooldownTimers"]

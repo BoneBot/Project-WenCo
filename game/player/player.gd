@@ -16,7 +16,7 @@ const ACCELERATION := SPEED * 12.0		# Walking acceleration
 const JUMP_VELOCITY := -400.0			# Initial jump speed
 const TERMINAL_VELOCITY := 700.0		# Max speed while falling
 const DASH_VELOCITY := 1000.0			# Initial dash speed
-const BLINK_IMPULSE_MAGNITUE := 600		# Impulse applied when throwing weapon for blink
+const BLINK_IMPULSE_MAGNITUE := 750		# Impulse applied when throwing weapon for blink
 
 # EXPORT VARIABLES
 ## The scene to use when spawning a sword for blink.
