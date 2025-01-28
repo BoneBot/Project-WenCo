@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwrdxcjbfay2d"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_qrp7i"]
+[ext_resource type="PackedScene" uid="uid://dv5bibnhhl106" path="res://game/gui/main_menu.tscn" id="2_4xc57"]
+[ext_resource type="PackedScene" uid="uid://2hhqloqihtee" path="res://game/demo.tscn" id="2_7xyjb"]
+[ext_resource type="PackedScene" uid="uid://cx4n5g4jwajpq" path="res://game/player/player.tscn" id="3_wbfb4"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_qrp7i")
+level_scenes = Array[PackedScene]([ExtResource("2_7xyjb")])
+player_scene = ExtResource("3_wbfb4")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="MainMenu" parent="UI" instance=ExtResource("2_4xc57")]
+
+[connection signal="start_game" from="UI/MainMenu" to="." method="start_game"]
