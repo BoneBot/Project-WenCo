@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3ww3brtfiyfe"
-path="res://.godot/imported/Test.jpg-c3bae9ecb6b827cd571c53e3daa50451.ctex"
+uid="uid://djr7gsrc4jsm6"
+path="res://.godot/imported/Platform Tiles 01.png-02e254fdde1643c99abff21f14c5d70b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Test.jpg"
-dest_files=["res://.godot/imported/Test.jpg-c3bae9ecb6b827cd571c53e3daa50451.ctex"]
+source_file="res://Art Stuff/Platform Tiles 01.png"
+dest_files=["res://.godot/imported/Platform Tiles 01.png-02e254fdde1643c99abff21f14c5d70b.ctex"]
 
 [params]
 

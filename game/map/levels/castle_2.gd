@@ -1,5 +1,8 @@
+# castle_2.gd
 extends Node2D
 
+
+@onready var spawnpoint := $Spawnpoint
 
 var player: CharacterBody2D
 
@@ -17,4 +20,4 @@ func initialize(player:CharacterBody2D) -> void:
 # Resets the scene to its original state
 func reset() -> void:
 	if player != null:
-		player.position = $DemoMap/Spawnpoint.position
+		player.position = spawnpoint.position
