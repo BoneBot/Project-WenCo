@@ -13,7 +13,7 @@ var player: CharacterBody2D
 
 func _ready() -> void:
 	if exit_door.has_signal("player_entered"):
-		connect(exit_door.player_entered, finish_level)
+		exit_door.player_entered.connect(finish_level)
 	else:
 		print_debug("WARNING: Level loaded without a valid exit door!")
 

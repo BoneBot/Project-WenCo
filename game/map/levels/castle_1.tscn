@@ -35,6 +35,7 @@ physics_layer_0/collision_mask = 3
 sources/1 = SubResource("TileSetAtlasSource_3orma")
 
 [node name="Castle1" type="Node2D" node_paths=PackedStringArray("spawnpoint", "exit_door")]
+texture_filter = 1
 script = ExtResource("1_majy7")
 spawnpoint = NodePath("Spawnpoint")
 exit_door = NodePath("Map/Door")
