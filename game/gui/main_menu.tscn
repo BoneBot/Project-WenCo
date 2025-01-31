@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv5bibnhhl106"]
 
 [ext_resource type="Script" path="res://game/gui/main_menu.gd" id="1_2f0hc"]
-[ext_resource type="Texture2D" uid="uid://dqg658is68cbi" path="res://Art Stuff/Background Assets/Background_Color.png" id="2_q83o8"]
+[ext_resource type="Texture2D" uid="uid://btmbo87wri2l8" path="res://Art Stuff/Title.png" id="2_tqutj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,7 +16,7 @@ script = ExtResource("1_2f0hc")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_q83o8")
+texture = ExtResource("2_tqutj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -27,34 +27,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 48
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Bound Blade"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_font_sizes/font_size = 20
-text = "Sword to None"
-horizontal_alignment = 1
-
-[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 10
 
-[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+[node name="StartGameButton" type="Button" parent="MarginContainer/ButtonsVBox"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
@@ -62,7 +43,7 @@ focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../QuitButton")
 text = "Start Game"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+[node name="QuitButton" type="Button" parent="MarginContainer/ButtonsVBox"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../StartGameButton")
 focus_neighbor_bottom = NodePath("../StartGameButton")
@@ -70,5 +51,5 @@ focus_next = NodePath("../StartGameButton")
 focus_previous = NodePath("../StartGameButton")
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]

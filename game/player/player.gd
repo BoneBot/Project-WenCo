@@ -76,6 +76,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Do not process any player physics if movement is not enabled
 	if not movement_enabled:
+		animation_player.play("idle")
 		return
 
 	if Input.is_action_just_released("blink") and blink_enabled and blink_ready:
