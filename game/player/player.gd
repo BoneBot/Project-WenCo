@@ -29,9 +29,11 @@ const BLINK_IMPULSE_MAGNITUE := 750		# Impulse applied when throwing weapon for 
 
 # MEMBER VARIABLES
 var sword_instance: RigidBody2D
+
 var movement_enabled := true
 var dash_enabled := true
 var blink_enabled := true
+
 var dash_ready := true
 var blink_ready := true
 
