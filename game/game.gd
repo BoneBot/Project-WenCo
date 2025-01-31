@@ -8,8 +8,9 @@ extends Node
 ## The player scene
 @export var player_scene: PackedScene
 
-@onready var main_menu = $UI/MainMenu
 @onready var world = $World
+@onready var main_menu = $UI/MainMenu
+@onready var dialogue_box = $UI/DialogueBox
 
 var current_level
 var current_level_index := 0
@@ -24,8 +25,9 @@ func load_level(index: int) -> void:
 	# Create new level
 	current_level = level_scenes[index].instantiate()
 
-	# Connect level transition signal
+	# Connect level signals
 	current_level.transition_next_level.connect(advance_level)
+	current_level.show_dialogue.connect(start_dialogue_box)
 
 	# Add level to game tree
 	world.add_child(current_level)
@@ -34,6 +36,7 @@ func load_level(index: int) -> void:
 
 func unload_current_level() -> void:
 	current_level.transition_next_level.disconnect(advance_level)
+	current_level.show_dialogue.disconnect(start_dialogue_box)
 	current_level.queue_free()
 
 
@@ -68,3 +71,12 @@ func advance_level() -> void:
 		# Finished the final level; return to main menu
 		player.queue_free()
 		main_menu.show()
+
+
+func start_dialogue_box(text: String) -> void:
+	player.movement_enabled = false
+	dialogue_box.start_dialogue(text)
+
+
+func _on_dialogue_box_dialogue_finished() -> void:
+	player.movement_enabled = true

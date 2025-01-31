@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwrdxcjbfay2d"]
+[gd_scene load_steps=10 format=3 uid="uid://cwrdxcjbfay2d"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_qrp7i"]
 [ext_resource type="PackedScene" uid="uid://dv5bibnhhl106" path="res://game/gui/main_menu.tscn" id="2_4xc57"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgvvu8xi4r4tv" path="res://game/map/levels/castle_5.tscn" id="2_rx6ma"]
 [ext_resource type="PackedScene" uid="uid://cn45ed4tn16rg" path="res://game/map/levels/castle_2.tscn" id="3_3g4im"]
 [ext_resource type="PackedScene" uid="uid://cx4n5g4jwajpq" path="res://game/player/player.tscn" id="3_wbfb4"]
+[ext_resource type="PackedScene" uid="uid://dniccg6h4n066" path="res://game/gui/dialogue_box.tscn" id="9_req08"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qrp7i")
@@ -16,8 +17,12 @@ player_scene = ExtResource("3_wbfb4")
 
 [node name="World" type="Node" parent="."]
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="UI" instance=ExtResource("2_4xc57")]
 
+[node name="DialogueBox" parent="UI" instance=ExtResource("9_req08")]
+visible = false
+
 [connection signal="start_game" from="UI/MainMenu" to="." method="start_game"]
+[connection signal="dialogue_finished" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_finished"]

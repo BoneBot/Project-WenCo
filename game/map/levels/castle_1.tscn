@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://jbovchxecee1"]
+[gd_scene load_steps=7 format=4 uid="uid://jbovchxecee1"]
 
 [ext_resource type="Texture2D" uid="uid://cvsn1m3e4fqi5" path="res://Art Stuff/Tiles Sprite Sheet.png" id="1_brlpk"]
 [ext_resource type="Script" path="res://game/common/level.gd" id="1_majy7"]
 [ext_resource type="PackedScene" uid="uid://cp03oxoydy4r0" path="res://game/map/components/door.tscn" id="3_rbd8v"]
+[ext_resource type="PackedScene" uid="uid://bjqiev0um0son" path="res://game/map/components/sparkle.tscn" id="4_p0ca7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3orma"]
 texture = ExtResource("1_brlpk")
@@ -55,3 +56,9 @@ position = Vector2(126, 276)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Sparkles" type="Node" parent="."]
+
+[node name="Sparkles" parent="Sparkles" instance=ExtResource("4_p0ca7")]
+position = Vector2(278, 311)
+prompt_text = "You can see me!
+Here's another line of dialogue. 
+And a third!"
