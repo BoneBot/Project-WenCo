@@ -105,8 +105,11 @@ func handle_normal_inputs(delta: float) -> void:
 
 	# Handle dash
 	if Input.is_action_just_pressed("dash") and dash_ready:
+		# Disable dash
 		dash_ready = false
 		dash_cooldown.start()
+
+		# Modify velocity
 		var velocity_threshold = 0.1
 		if direction > velocity_threshold:
 			# Dash right
@@ -117,6 +120,8 @@ func handle_normal_inputs(delta: float) -> void:
 		else:
 			# No current velocity; base dash direction on the direction the character is looking
 			velocity.x = DASH_VELOCITY * get_look_direction()
+		# Also reset vertical velocity
+		velocity.y = 0
 
 
 ## Handles inputs when the blink button is held down
