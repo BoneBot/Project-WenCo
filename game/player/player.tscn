@@ -92,14 +92,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Pivot/Sprite:frame_coords")
+tracks/6/path = NodePath("Pivot/HurtBox:monitoring")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(7, 5)]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_e1dyb"]
@@ -400,6 +400,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-1, -4)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/HurtBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1pbiu"]
 resource_name = "blink_end"
@@ -429,6 +441,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-1, -4)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/HurtBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.416667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ihtxg"]
 resource_name = "hurt"
@@ -457,6 +481,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/HurtBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecmp2"]
@@ -489,7 +525,6 @@ position = Vector2(4, -18)
 texture = ExtResource("3_lmai4")
 hframes = 13
 vframes = 6
-frame = 72
 
 [node name="HurtBox" type="Area2D" parent="Pivot"]
 script = ExtResource("4_4a1fa")
@@ -534,3 +569,4 @@ libraries = {
 [connection signal="damage_taken" from="Pivot/HurtBox" to="." method="_on_hurt_box_damage_taken"]
 [connection signal="timeout" from="CooldownTimers/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="CooldownTimers/BlinkCooldown" to="." method="_on_blink_cooldown_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
