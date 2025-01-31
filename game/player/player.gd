@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var pivot := $Pivot
 @onready var sprite := $Pivot/Sprite
 @onready var projectile_spawn := $Pivot/ProjectileSpawn
+@onready var ding_sprite := $Pivot/DingSprite
 @onready var camera := $Camera
 @onready var dash_cooldown := $CooldownTimers/DashCooldown
 @onready var blink_cooldown := $CooldownTimers/BlinkCooldown
@@ -238,7 +239,7 @@ func _on_dash_cooldown_timeout() -> void:
 
 func _on_blink_cooldown_timeout() -> void:
 	blink_ready = true
-	print("Blink ready!")
+	ding_sprite.play("default")
 
 
 func _on_hurt_box_damage_taken(damage: Variant) -> void:

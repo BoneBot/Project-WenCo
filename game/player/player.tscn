@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cx4n5g4jwajpq"]
+[gd_scene load_steps=27 format=3 uid="uid://cx4n5g4jwajpq"]
 
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
 [ext_resource type="PackedScene" uid="uid://bfs5s0pwr57xg" path="res://game/player/sword.tscn" id="2_je26h"]
 [ext_resource type="Texture2D" uid="uid://b06h3idia1hob" path="res://Art Stuff/Character_Animation_Final.png" id="3_tjslu"]
 [ext_resource type="Script" path="res://game/common/hurt_box.gd" id="4_4a1fa"]
 [ext_resource type="Script" path="res://game/common/hit_box.gd" id="4_j7nxm"]
+[ext_resource type="Texture2D" uid="uid://d3aeraprsrxqy" path="res://Art Stuff/Ding!.png" id="6_88uk6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ed6pa"]
 radius = 16.0
@@ -14,6 +15,55 @@ height = 64.0
 size = Vector2(28, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opus6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ann"]
+atlas = ExtResource("6_88uk6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3tph"]
+atlas = ExtResource("6_88uk6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v4vp"]
+atlas = ExtResource("6_88uk6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s62i3"]
+atlas = ExtResource("6_88uk6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4eos"]
+atlas = ExtResource("6_88uk6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0fif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8ann")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3tph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v4vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s62i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4eos")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="Animation" id="Animation_yu6k6"]
 length = 0.001
@@ -544,6 +594,11 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="ProjectileSpawn" type="Marker2D" parent="Pivot"]
 position = Vector2(28, 0)
+
+[node name="DingSprite" type="AnimatedSprite2D" parent="Pivot"]
+texture_filter = 1
+position = Vector2(0, -43)
+sprite_frames = SubResource("SpriteFrames_w0fif")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -72)
