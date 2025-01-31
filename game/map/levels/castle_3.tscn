@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dyhm8bn713tf7"]
+[gd_scene load_steps=7 format=4 uid="uid://dyhm8bn713tf7"]
 
 [ext_resource type="Script" path="res://game/common/level.gd" id="1_b0cy2"]
 [ext_resource type="Texture2D" uid="uid://cvsn1m3e4fqi5" path="res://Art Stuff/Tiles Sprite Sheet.png" id="2_q1exr"]
 [ext_resource type="PackedScene" uid="uid://cp03oxoydy4r0" path="res://game/map/components/door.tscn" id="3_ewf2p"]
+[ext_resource type="PackedScene" uid="uid://bjqiev0um0son" path="res://game/map/components/sparkle.tscn" id="4_yeyer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q76j3"]
 texture = ExtResource("2_q1exr")
@@ -54,3 +55,41 @@ position = Vector2(126, 276)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Sparkles" type="Node" parent="."]
+
+[node name="Sparkle" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(325, 306)
+prompt_text = "Hmm, you're starting to manifest more of your abilities... 
+Oh you get *that* one?! Ohoho, you're about to have a very fun time. 
+We call this particular gift Blinking. You temporarily dismiss your form as you launch yourself towards another location. Then you appear where your vessel lands, moving in the *blink* of an eye. It sounds complicated, but I promise you'll get the hang of it! "
+
+[node name="Sparkle2" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(603, 160)
+prompt_text = "To Blink, first hold down \"X\" or the Y button. Next, hold down arrow key(s) or the joystick in the direction you want to Blink. Finally, release \"X\" or the Y button and watch yourself go soaring! "
+
+[node name="Sparkle3" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(1276, 166)
+prompt_text = "Look at you, soaring through the air like a bird! I'll have to show you birds once you get out, I think you'll love them. After the rabbits and the wind, of course. 
+Where Dashing helps you with speed, Blinking helps with distance and vertical mobility. See if you can make your way up these overhangs. "
+
+[node name="Sparkle4" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(2427, 308)
+prompt_text = "Looks like you're getting the hang of it! But Blinking isn't just used for traveling large distances. It can also help you fit through tight gaps. Remember what I said earlier about our forms being flexible? "
+
+[node name="Sparkle5" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(3261, 200)
+prompt_text = "Nicely done! Now for the really cool part: If you Blink in mid-air, you actually stop! Right there in the air! See if you can jump and Blink your way up to the door to the next level. "
+
+[node name="Sparkle6" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(3890, -87)
+prompt_text = "Remember: While hovering in mid-air to Blink, you can launch yourself in *any* direction, even backwards! "
+
+[node name="Sparkle7" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(3490, -335)
+prompt_text = "Hmm... That's a particularly annoying ledge... 
+Luckily, though, you have the power of both Blink *and* Dash! Take a long jump out and Dash, then turn around and Blink onto the platform. Go a little further than you think you need to go. I believe in you! "
+
+[node name="Sparkle8" parent="Sparkles" instance=ExtResource("4_yeyer")]
+position = Vector2(3518, -518)
+prompt_text = "Oh finally you made it up. I was starting to get worried after the fifth or sixth time you fell on your face. I-i-in the best way possible! I never doubted you would make it up eventually! 
+You have tenacity and perseverance. You'll need those where you're going. It's a long way to get to our homeland once you get out of the castle. But if you can face that with the same determination that you showed this ledge, I have no doubt you'll make it there! 
+There should only be one more room until you're out. Come on! "

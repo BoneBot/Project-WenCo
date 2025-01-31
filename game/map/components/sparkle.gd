@@ -8,9 +8,11 @@ signal player_interacted(text)
 ## Separate successive text popups with newlines.
 @export_multiline var prompt_text: String
 
+@onready var sprite := $Sprite
+
 
 func _ready() -> void:
-	print(prompt_text)
+	sprite.play("default")
 
 
 func _physics_process(delta: float) -> void:

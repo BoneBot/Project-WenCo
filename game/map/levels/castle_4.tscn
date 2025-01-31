@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://7amt5jaov608"]
+[gd_scene load_steps=8 format=4 uid="uid://7amt5jaov608"]
 
 [ext_resource type="Script" path="res://game/common/level.gd" id="1_hub0e"]
 [ext_resource type="Texture2D" uid="uid://cvsn1m3e4fqi5" path="res://Art Stuff/Tiles Sprite Sheet.png" id="2_0pgga"]
 [ext_resource type="PackedScene" uid="uid://cp03oxoydy4r0" path="res://game/map/components/door.tscn" id="3_fdwhi"]
 [ext_resource type="PackedScene" uid="uid://vqevfmcy32me" path="res://game/enemies/knight.tscn" id="4_0oqj0"]
+[ext_resource type="PackedScene" uid="uid://bjqiev0um0son" path="res://game/map/components/sparkle.tscn" id="5_qokkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q76j3"]
 texture = ExtResource("2_0pgga")
@@ -87,3 +88,18 @@ facing_right = false
 position = Vector2(2625, -685)
 
 [node name="Sparkles" type="Node" parent="."]
+
+[node name="Sparkle" parent="Sparkles" instance=ExtResource("5_qokkh")]
+position = Vector2(370, 302)
+prompt_text = "Oh no... I sense humans up ahead. 
+I was hoping you'd be able to make it out without facing this, but it looks like we have no choice. They never do give us any choice. 
+Listen, I'm sure that you have a lot of resentment from being used as a weapon. I understand if you don't want to spill any more blood, but that may make the path ahead more difficult. 
+I can't say that I approve of violence, but... Well, this is your choice to make. We are Weapons to None. If any of us chooses to weild our vessels in combat, that is their choice to make. 
+If you do find yourself needing to use... force... you should be able to dispatch an opponent by pressing \"C\" or the B button. 
+Good luck. I can't let the humans find me. I'll see you on the other side. "
+
+[node name="Sparkle2" parent="Sparkles" instance=ExtResource("5_qokkh")]
+position = Vector2(2024, -661)
+prompt_text = "Oh thank the Shards you made it out of there still in one piece. Whatever happened in there, I know it was difficult. 
+But you made it! I'm so proud of you! Step beyond these doors and you'll be able to start your journey to freedom. 
+We're eagerly waiting for you, Weapon to None. "
