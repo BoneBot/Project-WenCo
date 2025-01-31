@@ -616,6 +616,10 @@ one_shot = true
 process_callback = 0
 one_shot = true
 
+[node name="RespawnTimer" type="Timer" parent="CooldownTimers"]
+wait_time = 6.0
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ecmp2")
@@ -624,4 +628,5 @@ libraries = {
 [connection signal="damage_taken" from="Pivot/HurtBox" to="." method="_on_hurt_box_damage_taken"]
 [connection signal="timeout" from="CooldownTimers/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="CooldownTimers/BlinkCooldown" to="." method="_on_blink_cooldown_timeout"]
+[connection signal="timeout" from="CooldownTimers/RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

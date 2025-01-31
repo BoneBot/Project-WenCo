@@ -12,7 +12,7 @@
 
 [node name="Game" type="Node"]
 script = ExtResource("1_qrp7i")
-level_scenes = Array[PackedScene]([ExtResource("2_rx6ma"), ExtResource("2_45oyj"), ExtResource("3_3g4im"), ExtResource("2_n8kr1"), ExtResource("2_44gnq")])
+level_scenes = Array[PackedScene]([ExtResource("3_3g4im"), ExtResource("2_n8kr1"), ExtResource("2_rx6ma"), ExtResource("2_44gnq"), ExtResource("2_45oyj")])
 player_scene = ExtResource("3_wbfb4")
 
 [node name="World" type="Node" parent="."]

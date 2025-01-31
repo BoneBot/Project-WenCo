@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+# SIGNALS
+signal player_death
+
 # CHILDREN
 @onready var collision := $Collision
 @onready var pivot := $Pivot
@@ -10,6 +13,7 @@ extends CharacterBody2D
 @onready var camera := $Camera
 @onready var dash_cooldown := $CooldownTimers/DashCooldown
 @onready var blink_cooldown := $CooldownTimers/BlinkCooldown
+@onready var respawn_timer := $CooldownTimers/RespawnTimer
 @onready var animation_player := $AnimationPlayer
 
 # CONSTANTS
@@ -30,11 +34,9 @@ const BLINK_IMPULSE_MAGNITUE := 750		# Impulse applied when throwing weapon for 
 
 # MEMBER VARIABLES
 var sword_instance: RigidBody2D
-
 var movement_enabled := true
 var dash_enabled := true
 var blink_enabled := true
-
 var dash_ready := true
 var blink_ready := true
 
@@ -231,6 +233,15 @@ func die() -> void:
 	sprite.visible = false
 	collision.set_deferred("disabled", true)
 	movement_enabled = false
+	player_death.emit()
+
+
+## Revives the player
+func revive() -> void:
+	health = max_health
+	sprite.visible = true
+	collision.set_deferred("disabled", false)
+	movement_enabled = true
 
 
 func _on_dash_cooldown_timeout() -> void:
@@ -256,3 +267,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		sprite.visible = false
 	elif anim_name == "blink_end":
 		movement_enabled = true
+
+
+func _on_respawn_timer_timeout() -> void:
+	revive()

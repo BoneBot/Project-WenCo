@@ -39,6 +39,7 @@ func initialize(player:CharacterBody2D) -> void:
 	player.movement_enabled = movement_allowed
 	player.dash_enabled = dash_allowed
 	player.blink_enabled = blink_allowed
+	player.player_death.connect(revive_player)
 	self.player = player
 	reset()
 
@@ -51,6 +52,11 @@ func reset() -> void:
 
 func finish_level() -> void:
 	transition_next_level.emit()
+
+
+func revive_player() -> void:
+	reset()
+	player.respawn_timer.start()
 
 
 func _on_sparkle_player_interacted(text: String) -> void:
