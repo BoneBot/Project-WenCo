@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be2882xwktgg8"
-path="res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"
+uid="uid://dqg658is68cbi"
+path="res://.godot/imported/Background_Color.png-3ee6712fb8d74189116a3d58d69c5e36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Placeholders/Knight_Placeholder_32x32.png"
-dest_files=["res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"]
+source_file="res://Art Stuff/Background Assets/Background_Color.png"
+dest_files=["res://.godot/imported/Background_Color.png-3ee6712fb8d74189116a3d58d69c5e36.ctex"]
 
 [params]
 

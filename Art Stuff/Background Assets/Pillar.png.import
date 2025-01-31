@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be2882xwktgg8"
-path="res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"
+uid="uid://dm2ew476y6ak3"
+path="res://.godot/imported/Pillar.png-fff737edcfe2be32c51662e987618c91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Placeholders/Knight_Placeholder_32x32.png"
-dest_files=["res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"]
+source_file="res://Art Stuff/Background Assets/Pillar.png"
+dest_files=["res://.godot/imported/Pillar.png-fff737edcfe2be32c51662e987618c91.ctex"]
 
 [params]
 

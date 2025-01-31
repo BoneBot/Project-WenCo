@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be2882xwktgg8"
-path="res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"
+uid="uid://b554vcqsj68cx"
+path="res://.godot/imported/Tiles Sprite Sheet.png-38fccdb3025fcaca9159331e38c767b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Placeholders/Knight_Placeholder_32x32.png"
-dest_files=["res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"]
+source_file="res://Art Stuff/Background Assets/Tiles Sprite Sheet.png"
+dest_files=["res://.godot/imported/Tiles Sprite Sheet.png-38fccdb3025fcaca9159331e38c767b3.ctex"]
 
 [params]
 

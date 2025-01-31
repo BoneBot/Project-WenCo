@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5cfw7cdoey0f"
-path="res://.godot/imported/Knight_Placeholder_64x64.png-da804e35dbfa1851dbfdd0a9403f34e5.ctex"
+path="res://.godot/imported/Knight_Placeholder_64x64.png-5e10e58e850d37a9eea4c1c82b5d89e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Knight_Placeholder_64x64.png"
-dest_files=["res://.godot/imported/Knight_Placeholder_64x64.png-da804e35dbfa1851dbfdd0a9403f34e5.ctex"]
+source_file="res://Art Stuff/Placeholders/Knight_Placeholder_64x64.png"
+dest_files=["res://.godot/imported/Knight_Placeholder_64x64.png-5e10e58e850d37a9eea4c1c82b5d89e8.ctex"]
 
 [params]
 

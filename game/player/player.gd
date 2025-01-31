@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 
 # CHILDREN
-@onready var sprite := $Sprite
 @onready var collision := $Collision
-@onready var animation_player := $AnimationPlayer
+@onready var pivot := $Pivot
+@onready var sprite := $Pivot/Sprite
+@onready var projectile_spawn := $Pivot/ProjectileSpawn
+@onready var camera := $Camera
 @onready var dash_cooldown := $CooldownTimers/DashCooldown
 @onready var blink_cooldown := $CooldownTimers/BlinkCooldown
-@onready var projectile_spawn := $ProjectileSpawn
-@onready var camera := $Camera
+@onready var animation_player := $AnimationPlayer
 
 # CONSTANTS
 const SPEED := 300.0					# Max walking speed
@@ -142,7 +143,7 @@ func trigger_blink() -> void:
 
 ## Gets the current direction the player is looking
 func get_look_direction() -> LookDirectionType:
-	if not sprite.flip_h:
+	if pivot.scale.x == 1:
 		return LookDirectionType.RIGHT
 	else:
 		return LookDirectionType.LEFT
@@ -152,14 +153,10 @@ func get_look_direction() -> LookDirectionType:
 func look_at_direction(direction: LookDirectionType) -> void:
 	if direction == LookDirectionType.RIGHT:
 		# Look right
-		sprite.flip_h = false
-		sprite.offset.x = -absf(sprite.offset.x)
-		projectile_spawn.position.x = absf(projectile_spawn.position.x)
+		pivot.scale.x = 1
 	elif direction == LookDirectionType.LEFT:
 		# Look left
-		sprite.flip_h = true
-		sprite.offset.x = absf(sprite.offset.x)
-		projectile_spawn.position.x = -absf(projectile_spawn.position.x)
+		pivot.scale.x = -1
 
 
 ## Gets the current animation to play based on the player state
@@ -169,17 +166,16 @@ func get_new_animation(isAttacking: bool) -> String:
 		if "attack" in animation_player.current_animation and animation_player.is_playing():
 			animation_new = animation_player.current_animation
 		elif isAttacking:
-			animation_new = "attack_"
-			if get_look_direction() == LookDirectionType.RIGHT:
-				animation_new += "right"
-			else:
-				animation_new += "left"
+			animation_new = "attack"
 		elif absf(velocity.x) > 0.1:
 			animation_new = "run"
 		else:
 			animation_new = "idle"
 	else:
-		animation_new = "jump"
+		if animation_player.current_animation not in ["fall", "attack"] and animation_player.is_playing():
+			animation_new = "jump"
+		else:
+			animation_new = "fall"
 	return animation_new
 
 

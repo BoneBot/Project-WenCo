@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv5bibnhhl106"]
+[gd_scene load_steps=3 format=3 uid="uid://dv5bibnhhl106"]
 
 [ext_resource type="Script" path="res://game/gui/main_menu.gd" id="1_2f0hc"]
+[ext_resource type="Texture2D" uid="uid://dqg658is68cbi" path="res://Art Stuff/Background Assets/Background_Color.png" id="2_q83o8"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,14 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2f0hc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0234, 0.13, 0.128223, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_q83o8")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -38,6 +36,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Bound Blade"
 horizontal_alignment = 1
@@ -46,6 +45,7 @@ vertical_alignment = 2
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Sword to None"
 horizontal_alignment = 1

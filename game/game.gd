@@ -9,6 +9,7 @@ extends Node
 @export var player_scene: PackedScene
 
 @onready var main_menu = $UI/MainMenu
+@onready var world = $World
 
 var current_level
 var current_level_index := 0
@@ -27,8 +28,8 @@ func load_level(index: int) -> void:
 	current_level.transition_next_level.connect(advance_level)
 
 	# Add level to game tree
-	add_child(current_level)
-	move_child(current_level, 0)
+	world.add_child(current_level)
+	world.move_child(current_level, 0)
 
 
 func unload_current_level() -> void:

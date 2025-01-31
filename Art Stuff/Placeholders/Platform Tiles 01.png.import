@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be2882xwktgg8"
-path="res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"
+uid="uid://cre8okpvm7coh"
+path="res://.godot/imported/Platform Tiles 01.png-41b7904a6bfde5ee9b242433fa885af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Placeholders/Knight_Placeholder_32x32.png"
-dest_files=["res://.godot/imported/Knight_Placeholder_32x32.png-bed98146f78dea2ad442aa9bb55f4a0a.ctex"]
+source_file="res://Art Stuff/Placeholders/Platform Tiles 01.png"
+dest_files=["res://.godot/imported/Platform Tiles 01.png-41b7904a6bfde5ee9b242433fa885af6.ctex"]
 
 [params]
 

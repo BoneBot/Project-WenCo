@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cimw06datwdeb"
-path="res://.godot/imported/Run_Cycle_Sketch.png-eb485d63642582981d4aaefee16bcfcb.ctex"
+path="res://.godot/imported/Run_Cycle_Sketch.png-3b45b80535d90b30d0271daacffa3e3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Stuff/Run_Cycle_Sketch.png"
-dest_files=["res://.godot/imported/Run_Cycle_Sketch.png-eb485d63642582981d4aaefee16bcfcb.ctex"]
+source_file="res://Art Stuff/Placeholders/Run_Cycle_Sketch.png"
+dest_files=["res://.godot/imported/Run_Cycle_Sketch.png-3b45b80535d90b30d0271daacffa3e3f.ctex"]
 
 [params]
 
