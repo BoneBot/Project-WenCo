@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/player/player.gd" id="1_36ijq"]
 [ext_resource type="PackedScene" uid="uid://bfs5s0pwr57xg" path="res://game/player/sword.tscn" id="2_je26h"]
-[ext_resource type="Texture2D" uid="uid://cnchygbmlyyc7" path="res://Art Stuff/Character_Animation_Sketch.png" id="3_lmai4"]
+[ext_resource type="Texture2D" uid="uid://b06h3idia1hob" path="res://Art Stuff/Character_Animation_Final.png" id="3_tjslu"]
 [ext_resource type="Script" path="res://game/common/hurt_box.gd" id="4_4a1fa"]
 [ext_resource type="Script" path="res://game/common/hit_box.gd" id="4_j7nxm"]
 
@@ -11,7 +11,7 @@ radius = 16.0
 height = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65ryw"]
-size = Vector2(22, 48)
+size = Vector2(28, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opus6"]
 
@@ -87,7 +87,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -18)]
+"values": [Vector2(-7, -17)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -137,10 +137,10 @@ tracks/2/path = NodePath("Pivot/HitBox/HitBoxCollision:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0416667, 0.0833333),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-3, -36), Vector2(36.4859, -9.50554), Vector2(-35.6889, -10.1351)]
+"values": [Vector2(-2.15262, -37.6338), Vector2(32.4999, -10.014), Vector2(-28.3007, 5.5995)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -149,10 +149,10 @@ tracks/3/path = NodePath("Pivot/HitBox/HitBoxCollision:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0416667, 0.0833333),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-0.643872, -1.57641, -1.55746]
+"values": [-0.829241, -1.5708, -1.1077]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -161,10 +161,10 @@ tracks/4/path = NodePath("Pivot/HitBox/HitBoxCollision:shape:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0416667, 0.0833333),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(12.6361, 28.9202), Vector2(64.9934, 36.9994), Vector2(20.3035, 33.6452)]
+"values": [Vector2(13.2584, 31.4763), Vector2(64.9934, 30.9995), Vector2(14.7578, 52.3331)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -176,7 +176,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-5, -18)]
+"values": [Vector2(-6, -17)]
 }
 
 [sub_resource type="Animation" id="Animation_1pbiu"]
@@ -287,7 +287,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0833333, 0.416667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(-5, -17), Vector2(17, -17), Vector2(1, -17)]
+"values": [Vector2(-6, -17), Vector2(17, -17), Vector2(1, -17)]
 }
 
 [sub_resource type="Animation" id="Animation_vaasg"]
@@ -316,7 +316,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(-7, -6)]
+"values": [Vector2(-10, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_ihtxg"]
@@ -345,7 +345,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -17)]
+"values": [Vector2(-11, -17)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -433,7 +433,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -18)]
+"values": [Vector2(-7, -17)]
 }
 
 [sub_resource type="Animation" id="Animation_qie8y"]
@@ -462,7 +462,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0833333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2(-13, -16), Vector2(-7, -6)]
+"values": [Vector2(-13, -16), Vector2(-10, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_d621y"]
@@ -492,7 +492,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-5, -17)]
+"values": [Vector2(-6, -17)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecmp2"]
@@ -521,8 +521,8 @@ shape = SubResource("CapsuleShape2D_ed6pa")
 
 [node name="Sprite" type="Sprite2D" parent="Pivot"]
 texture_filter = 1
-position = Vector2(4, -18)
-texture = ExtResource("3_lmai4")
+position = Vector2(-7, -17)
+texture = ExtResource("3_tjslu")
 hframes = 13
 vframes = 6
 
