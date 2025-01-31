@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://dgvvu8xi4r4tv"]
+[gd_scene load_steps=8 format=4 uid="uid://dgvvu8xi4r4tv"]
 
 [ext_resource type="Script" path="res://game/common/level.gd" id="1_3gryg"]
+[ext_resource type="Texture2D" uid="uid://dm2ew476y6ak3" path="res://Art Stuff/Background Assets/Pillar.png" id="2_1veqr"]
 [ext_resource type="Texture2D" uid="uid://cvsn1m3e4fqi5" path="res://Art Stuff/Tiles Sprite Sheet.png" id="2_iufb8"]
 [ext_resource type="PackedScene" uid="uid://cp03oxoydy4r0" path="res://game/map/components/door.tscn" id="3_cyv8c"]
 [ext_resource type="PackedScene" uid="uid://bjqiev0um0son" path="res://game/map/components/sparkle.tscn" id="4_iv6l8"]
@@ -40,6 +41,17 @@ texture_filter = 1
 script = ExtResource("1_3gryg")
 spawnpoint = NodePath("Spawnpoint")
 exit_door = NodePath("Map/Door")
+
+[node name="Decoration" type="Node2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Pillar" type="Sprite2D" parent="Decoration"]
+position = Vector2(342, 155)
+texture = ExtResource("2_1veqr")
+
+[node name="Pillar2" type="Sprite2D" parent="Decoration"]
+position = Vector2(972, 155)
+texture = ExtResource("2_1veqr")
 
 [node name="Map" type="TileMapLayer" parent="."]
 position = Vector2(-2, 0)

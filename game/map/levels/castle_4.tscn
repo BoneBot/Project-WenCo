@@ -50,6 +50,8 @@ tile_set = SubResource("TileSet_2j1cd")
 [node name="Door" parent="Map" instance=ExtResource("3_fdwhi")]
 position = Vector2(1920, -648)
 
+[node name="Decoration" type="Node2D" parent="Map"]
+
 [node name="Spawnpoint" type="Marker2D" parent="."]
 position = Vector2(126, 276)
 
