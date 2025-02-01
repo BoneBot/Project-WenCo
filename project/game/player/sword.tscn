@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfs5s0pwr57xg"]
 
 [ext_resource type="Script" path="res://game/player/sword.gd" id="1_41mhr"]
-[ext_resource type="Texture2D" uid="uid://bprb53tcib2aa" path="res://Art Stuff/Sword Sprite.png" id="1_684le"]
+[ext_resource type="Texture2D" uid="uid://ei7gwy52obxh" path="res://Art Stuff/Sword_Final.png" id="2_2magk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xq2p"]
 radius = 5.0
@@ -19,7 +19,7 @@ metadata/_edit_group_ = true
 texture_filter = 1
 position = Vector2(-21.7452, 4.25483)
 rotation = -2.35619
-texture = ExtResource("1_684le")
+texture = ExtResource("2_2magk")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-3.82137e-15, 8.74228e-08)

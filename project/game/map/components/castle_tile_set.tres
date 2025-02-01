@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ktygb2gor34"]
+
+[ext_resource type="Texture2D" uid="uid://b554vcqsj68cx" path="res://Art Stuff/Background Assets/Tiles Sprite Sheet.png" id="1_0ud1l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3orma"]
+texture = ExtResource("1_0ud1l")
+margins = Vector2i(7, 0)
+separation = Vector2i(5, 2)
+texture_region_size = Vector2i(32, 38)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -18, 16, -18, 16, 3, -14, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -18, 15, -18, 15, 3, -15, 3)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -18, 16, -18, 15, 3, -16, 3)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -18, 16, -18, 16, 19, -14.5, 19)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -18, 15, -18, 15, 19, -15, 19)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -18, 16, -18, 15, 19, -16, 19)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14, -18, 16, -18, 16, 18, -14, 18)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -18, 15, -18, 15, 18, -15, 18)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -18, 15, -18, 15, 18, -16, 18)
+
+[resource]
+tile_size = Vector2i(30, 36)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
+sources/1 = SubResource("TileSetAtlasSource_3orma")
