@@ -225,7 +225,7 @@ func get_new_animation(isAttacking: bool) -> String:
 ## Creates a new instance of a sword used to blink
 func create_sword_instance() -> void:
 	sword_instance = sword_scene.instantiate()
-	sword_instance.initialize(projectile_spawn.position, _on_blink_triggered)
+	sword_instance.initialize(projectile_spawn.position, (pivot.scale.x < 0), _on_blink_triggered)
 
 
 ## Kills the player

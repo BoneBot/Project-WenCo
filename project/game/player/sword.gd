@@ -11,9 +11,12 @@ signal blink_triggered(blink_position)
 
 # Initializes the contents of the sword
 # projectile_position: The global position coordinates to spawn the sword at
+# flip: Whether or not to flip the x position of the sword when spawning it
 # blink_signal_callable: Optional. The callable to connect the blink_triggered signal to
-func initialize(projectile_position:Vector2, blink_signal_callable:Callable=Callable()) -> void:
+func initialize(projectile_position:Vector2, flip:bool, blink_signal_callable:Callable=Callable()) -> void:
 	position = projectile_position
+	if flip:
+		position.x = -position.x
 	if not blink_signal_callable.is_null():
 		blink_triggered.connect(blink_signal_callable)
 
